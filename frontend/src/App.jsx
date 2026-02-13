@@ -1,17 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, Navigate } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1 className='bg-red-700 text-4xl'> Ayaz Hussain</h1>
-       
-    </>
-  )
+    <Routes>
+      {/* Default route */}
+      <Route path="/" element={<Login />} />
+
+      {/* Auth routes */}
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+
+      {/* Dashboard */}
+      <Route path="/dashboard" element={<Dashboard />} />
+
+      {/* Fallback route (important) */}
+      <Route path="*" element={<Navigate to="/login" />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

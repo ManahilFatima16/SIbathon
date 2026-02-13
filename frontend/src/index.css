@@ -67,3 +67,27 @@ button:focus-visible {
   }
 } */
 @import "tailwindcss";
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes grow {
+  from { height: 0%; }
+  to { height: 100%; }
+}
+
+.animate-fadeIn { animation: fadeIn 0.8s ease forwards; }
+.animate-fadeInUp { animation: fadeInUp 1s ease forwards; }
+.animate-spin-slow { animation: spinSlow 20s linear infinite; }
+.animate-grow { animation: grow 1s ease forwards; }
